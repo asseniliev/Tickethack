@@ -1,18 +1,13 @@
-var express = require("express");
-const { route } = require("../app.js");
-var router = express.Router();
+const mongoose = require("mongoose");
 
-const Bookings = require("../models/bookings.js");
-
-router.get("/", (req, res) => {
-	Bookings.find().then((data) => res.json({ data }));
+const bookingSchema = mongoose.Schema({
+	selectedTrip: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "trips",
+	},
+	buyingPrice: Number,
 });
 
-router.post("/", (req, res) => {
-	const newBooking = new Bookings({
-		selectedTrip: req.selectedTrip,
-		buyingPrice: req.buyingPrice,
-	});
+const Booking = mongoose.model("bookings", bookingSchema);
 
-	newBooking.save().then(() => {});
-});
+module.exports = Booking;
