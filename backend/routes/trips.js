@@ -4,12 +4,12 @@ var router = express.Router();
 const Trip = require('../models/trips');
 
 router.get('/', (req, res) => {
-  Trips.find()
+  Trip.find()
        .then((data) => res.json({data}));
 });
 
 router.get('/:id', (req, res) => {
-  Trips.findOne({id: id})
+  Trip.findOne({_id: req.params.id})
        .then((data) => res.json({data}));
 });
 

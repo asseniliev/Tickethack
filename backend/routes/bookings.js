@@ -1,20 +1,25 @@
 var express = require("express");
-const { route } = require("../app.js");
 var router = express.Router();
 
-const Bookings = require('../models/bookings.js');
+const Booking = require('../models/bookings.js');
 
 router.get('/', (req, res) => {
-  Bookings.find()
+  Booking.find()
        .then((data) => res.json({data}));
 });
 
+//63cfba6cd54d01ebd8051603
+
 router.post('/', (req, res) => {
-  const newBooking = new Bookings({
-    selectedTrip: req.selectedTrip,
-    buyingPrice: req.buyingPrice
+  const newBooking = new Booking({
+    selectedTrip: req.body.selectedTrip,
+    buyingPrice: req.body.buyingPrice
   });
 
-  newBooking.save().then(() => {});
+  console.log(newBooking);
+
+  newBooking.save().then((data) => {res.json(data)});
 
 });
+
+module.exports = router;
