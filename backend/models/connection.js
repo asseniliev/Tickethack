@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const connectionString = "mongodb+srv://.../todoapp";
+const connectionString = "mongodb+srv://admin:MyCon42DBClus1Now131@cluster0.8ikevav.mongodb.net/tickethack";
 
 mongoose
 	.connect(connectionString, { connectTimeoutMS: 2000 })
