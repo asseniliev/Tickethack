@@ -7,7 +7,7 @@ const Trip = require('../models/trips');
 //Retrieve trips following filter parameters
 
 router.get('/', (req, res) => {
-  console.log('req.query.date: ' + req.query.date);
+  //console.log('req.query.date: ' + req.query.date);
   
   let startOfDay = moment(req.query.date).startOf('day').utc().toDate();
   startOfDay = startOfDay.getTime() - startOfDay.getTimezoneOffset()*60000;
@@ -17,8 +17,8 @@ router.get('/', (req, res) => {
   endOfDay = endOfDay.getTime() - endOfDay.getTimezoneOffset()*60000;
   endOfDay = new Date(endOfDay);
   
-  console.log('Start date: ' + startOfDay);
-  console.log('End date: ' + endOfDay);
+  //console.log('Start date: ' + startOfDay);
+  //console.log('End date: ' + endOfDay);
 
   Trip.find({
     departure: req.query.departure,

@@ -7,8 +7,8 @@ const Booking = require('../models/bookings.js');
 //Select all bookings
 router.get('/', (req, res) => {
   Booking.find()
-    .populate('selectedTrip')
-    .then((data) => res.json({data}));
+      .populate('selectedTrip')
+       .then((data) => res.json({data}));
 });
 
 //63cfba6cd54d01ebd8051603
