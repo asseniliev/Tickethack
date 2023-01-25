@@ -4,19 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>My Cart</title>
 </head>
 <body>
-    <div id="container">
-        <div class="header"></div>
-        <div class="mainContend">
-            <div id="cartTrip"></div>
-            <div id="cartArrival"></div>
-            <div id="cartPrice"></div>
-            <div id="cartDelete"><a>❎</a></div>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <h1 class="logo">Tickethack</h1>                
+            </div>
+            <div class="menu-container">
+                <div class="header-menu">
+                    <h3>Cart</h3>
+                </div>  
+                <div class="header-menu">
+                    <h3>Booking</h3>
+                </div> 
+            </div>
         </div>
-        <div id="bottomCart"></div>
+
+        <div class="content">
+            <div class="cart-container">
+                <div class="cart-container-title">
+                    <h3>My Cart</h3>
+                </div>
+                <div class="cart-trip-line">
+                    <div class="trip-line-text">
+                        <div><h3>Paris > Lyon</h3></div>
+                        <div><h3>20:09</h3></div>
+                        <div><h3>103 &euro;</h3></div>
+                        <div><span>❎</span></div>                        
+                    </div>
+                </div>
+                <div class="cart-total-line">
+                    <div class="cart-total-text">
+                        <div class="cart-total-amount"><h3>Total: 103 &euro;</h3></div>  
+                        <div class="cart-purchase-button" ><button type="button">Purchase</button></div> 
+                    </div>
+                </div>
+                <div></div>
+            </div>
+            <!-- <div id="cartTrip">cartTrip</div>
+            <div id="cartArrival">cartArrival</div>
+            <div id="cartPrice">cartPrice</div>
+            <div id="cartDelete"><a>❎</a></div> -->
+        </div>
+        <!-- <div id="bottomCart">bottomCart</div> -->
     </div>
+    
     <script src="myCart.js"></script>
 </body>
 </html>
